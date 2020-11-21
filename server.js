@@ -18,8 +18,8 @@ const app = express()
 const productRoute = require("./route/product")
 const orderRoute = require("./route/order")
 
-app.use("/adressproduct", productRoute)
-app.use("/adressorder", orderRoute)
+app.use("/addressproduct", productRoute)
+app.use("/addressorder", orderRoute)
 
 const port = 5001
 
