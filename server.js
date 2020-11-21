@@ -9,11 +9,17 @@ const express = require('express')
 const app = express()
 
 //require response test
-app.use((aaa, bbb) => {
-    bbb.json({
-        message: "서버 시작되었음"
-   })
-})
+// app.use((aaa, bbb) => {
+//     bbb.json({
+//         message: "서버 시작되었음"
+//    })
+// })
+
+const productRoute = require("./route/product")
+const orderRoute = require("./route/order")
+
+app.use("/adressproduct", productRoute)
+app.use("/adressorder", orderRoute)
 
 const port = 5001
 

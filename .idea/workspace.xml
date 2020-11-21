@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c811f50-4825-44e3-8ded-a66c1b27011a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/route/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/route/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
@@ -39,11 +41,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605932060145</updated>
-      <workItem from="1605932061742" duration="4149000" />
+      <workItem from="1605932061742" duration="8574000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="441" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605937838241">
+      <screen x="0" y="23" width="1792" height="1053" />
+    </state>
+    <state x="441" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1053@0.23.1792.1053" timestamp="1605937838241" />
   </component>
 </project>
