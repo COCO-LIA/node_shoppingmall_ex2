@@ -15,8 +15,19 @@ router.get("/get", (ccc, ddd) => {
 
 //procuct 등록해주는 API
 router.post("/", (req, res) =>{
+
+    //사용자 입력값 설정
+
+    const productInfo = {
+        name: req.body.productname,
+        price: req.body.productPrice,
+        category: req.body.category
+    }
+
+
     res.json({
-        message : "product의 post 라우"
+        message : "product의 post 라우터",
+        product: productInfo
     })
 })
 

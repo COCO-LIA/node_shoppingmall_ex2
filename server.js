@@ -5,7 +5,7 @@
 //세번째: 하위 메소드를 불러오는 방법: .으로 표시한다.
 
 const express = require('express')
-
+const bodyParser = require('body-parser')
 const app = express()
 
 //require response test
@@ -17,6 +17,10 @@ const app = express()
 
 const productRoute = require("./route/product")
 const orderRoute = require("./route/order")
+
+//미들웨어 설정
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.use("/addressproduct", productRoute)
 app.use("/addressorder", orderRoute)
