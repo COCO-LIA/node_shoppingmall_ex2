@@ -1,0 +1,19 @@
+{
+  "name": "node_shoppingmall_ex2",
+  "version": "1.0.0",
+  "description": "node_shoppingmall_ex2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/COCO-LIA/node_shoppingmall_ex2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/COCO-LIA/node_shoppingmall_ex2/issues"
+  },
+  "homepage": "https://github.com/COCO-LIA/node_shoppingmall_ex2#readme"
+}
