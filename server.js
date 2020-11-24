@@ -11,10 +11,12 @@ const mongoose = require('mongoose')
 const app = express()
 
 //DB connect
-const dbAddress = ""
+const dbAddress = "mongodb+srv://admin:qwer@cluster0.huxry.mongodb.net/nodeshoppingmall2?retryWrites=true&w=majority"
+
+const dbOptions = { useNewUrlParser: true, useUnifiedTopology: true }
 
 mongoose
-    .connect(dbAddress)
+    .connect(dbAddress, dbOptions )
     .then(() => console.log("DB connected")) //db에 성공했을 때 행동
     .catch(err => console.log("++++++++++++++++++", err.message)) //db에 실패했을 때 행동
 
