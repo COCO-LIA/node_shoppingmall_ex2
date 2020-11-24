@@ -6,14 +6,18 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+
 const app = express()
 
-//require response test
-// app.use((aaa, bbb) => {
-//     bbb.json({
-//         message: "서버 시작되었음"
-//    })
-// })
+//DB connect
+const dbAddress = ""
+
+mongoose
+    .connect(dbAddress)
+    .then(() => console.log("DB connected")) //db에 성공했을 때 행동
+    .catch(err => console.log("++++++++++++++++++", err.message)) //db에 실패했을 때 행동
+
 
 const productRoute = require("./route/product")
 const orderRoute = require("./route/order")
