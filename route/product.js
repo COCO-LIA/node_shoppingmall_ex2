@@ -3,6 +3,8 @@ const express = require("express")
 
 const router = express.Router()
 
+const productModel2 = require('../model/product')
+
 //3
 
 //product 불러오는 API
@@ -16,19 +18,40 @@ router.get("/get", (ccc, ddd) => {
 //procuct 등록해주는 API
 router.post("/", (req, res) =>{
 
-    //사용자 입력값 설정
+    // //사용자 입력값 설정
+    //
+    // const productInfo = {
+    //     name: req.body.productname,
+    //     price: req.body.productPrice,
+    //     category: req.body.category
+    // }
+    //
+    //
+    // res.json({
+    //     message : "product의 post 라우터",
+    //     product: productInfo
+    // })
 
-    const productInfo = {
+    const productInfo = new productModel2({
         name: req.body.productname,
-        price: req.body.productPrice,
+        price: req.body.productprice,
         category: req.body.category
-    }
-
-
-    res.json({
-        message : "product의 post 라우터",
-        product: productInfo
     })
+
+    productInfo
+        .save()
+        .then(item => {
+            res.json({
+                msg: "saver product2",
+                productInfo: item
+            })
+        })
+        .catch(err => {
+            res.json({
+                msg: err.message
+            })
+        })
+
 })
 
 //product 수정하는 API
