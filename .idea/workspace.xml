@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c811f50-4825-44e3-8ded-a66c1b27011a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/model/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kaI1HtGIod7azxHD5PkK9Ur62c" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,7 +47,7 @@
       <workItem from="1605949419185" duration="1974000" />
       <workItem from="1605952521981" duration="158000" />
       <workItem from="1605952753785" duration="844000" />
-      <workItem from="1606224613308" duration="1461000" />
+      <workItem from="1606224613308" duration="2651000" />
     </task>
     <servers />
   </component>
