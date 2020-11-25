@@ -90,10 +90,33 @@ router.post("/", (req, res) =>{
 })
 
 //product 수정하는 API
-router.patch("/", (req, res) => {
-    res.json({
-        message : "product의 patch 라우터"
-    })
+router.patch("/:productId", (req, res) => {
+    // res.json({
+    //     message : "product의 patch 라우터"
+    // })
+
+    //수정할 내용을 정의
+    const updateOps = {}
+
+    for (const ops of req.body) {
+        updateOps[ops.propName] = ops.value
+    }
+
+
+
+    productModel2
+        .findByIdAndUpdate(req.params.productId, { $set: updateOps })
+        .then(() => {
+            res.json({
+                message: "Updated product " + req.params.productId
+            })
+        })
+        .catch(err => {
+            res.json({
+                msg:err.message
+            })
+        })
+
 })
 //product 삭제하는 API
 router.delete("/", (req, res) =>{
