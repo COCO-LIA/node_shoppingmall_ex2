@@ -32,6 +32,23 @@ router.get("/get", (qqq, sss) => {
     // })
 })
 
+//상세 product불러오는 API
+router.get("/:productId", (qqq, sss) => {
+
+productModel2
+    .findById(qqq.params.productId)
+    .then(item => {
+        sss.json({
+            msg:"get product data" + item._id,
+            product:item
+        })
+    })
+    .catch(err => {
+        sss.json({
+            msg:err.message
+        })
+    })
+})
 
 //procuct 등록해주는 API
 router.post("/", (req, res) =>{
