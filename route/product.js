@@ -97,10 +97,41 @@ router.patch("/", (req, res) => {
 })
 //product 삭제하는 API
 router.delete("/", (req, res) =>{
-    res.json({
-        message: "product의 delete API"
-    })
+    // res.json({
+    //     message: "product의 delete API"
+    // })
+    productModel2
+        .delete()
+        .then(() => {
+            res.json({
+                msg: "deleted All products"
+            })
+        })
+        .catch(err => {
+            res.json({
+                msg: err.message
+            })
+        })
 })
+
+//특정 product를 삭제하는 API
+router.delete("/:productId", (req, res)=>{
+    productModel2
+        .findByIdAndDelete(req.params.productId)
+        .then(() => {
+            res.json({
+                msg: "deleted product"
+            })
+        })
+
+        .catch(err => {
+            res.json({
+                msg: err.message
+            })
+        })
+})
+
+
 
 //2
 module.exports = router
