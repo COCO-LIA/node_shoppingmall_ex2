@@ -8,10 +8,28 @@ const productModel2 = require('../model/product')
 //3
 
 //product 불러오는 API
-router.get("/get", (ccc, ddd) => {
-    ddd.json({
-        message : "get라우터 "
-    })
+router.get("/get", (qqq, sss) => {
+
+    productModel2
+        .find()
+        .then(docs => {
+            sss.json({
+                msg: "product total get",
+                count: docs.length,
+                products: docs
+            })
+        })
+        .catch(err => {
+            sss.json({
+                msg:err.message
+            })
+        })
+
+
+
+    // ddd.json({
+    //     message : "get라우터 "
+    // })
 })
 
 
