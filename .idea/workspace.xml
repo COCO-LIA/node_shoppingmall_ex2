@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c811f50-4825-44e3-8ded-a66c1b27011a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/route/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/route/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +48,7 @@
       <workItem from="1606224613308" duration="4474000" />
       <workItem from="1606283020562" duration="10347000" />
       <workItem from="1606830210624" duration="732000" />
-      <workItem from="1606838274699" duration="9322000" />
+      <workItem from="1606838274699" duration="9901000" />
     </task>
     <servers />
   </component>
@@ -63,5 +60,17 @@
       <screen x="0" y="23" width="1792" height="1053" />
     </state>
     <state x="441" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1053@0.23.1792.1053" timestamp="1605937838241" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/route/user.js</url>
+          <line>62</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
