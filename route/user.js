@@ -70,6 +70,34 @@ router.post("/register", (req, res) => {
 //로그인 API
 router.post("/login", (req, res) => {
 
+    //이메일 유무체크 -> 패스워드 매칭-> 접속유저정보 뿌려주기
+    userModel
+        .findOne({email: req.body.em })
+        .then(uuser => {
+            if(!uuser) {
+                return  res.json ({
+                    msg: "없는 이메일입니다. 다시 입력해 주십시오."
+                })
+            } else  {
+                // console.log(uuser)
+                bcrypt.compare(req.body.pw, uuser.password, (err, isMatch) => {
+
+                    if (err || isMatch === false) {
+                        return  res.json({
+                            msg: "Auth failed (password incorrected)"
+                        })
+                    } else {
+                        res.json(uuser)
+                    }
+                })
+            }
+        })
+        .catch(err => {
+            res.json({
+                msg: err.message
+            })
+        })
+
     })
 
 //2
