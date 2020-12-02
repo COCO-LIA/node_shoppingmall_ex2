@@ -8,7 +8,7 @@ const productModel2 = require('../model/product')
 //3
 
 //product 불러오는 API
-router.get("/get", (qqq, sss) => {
+router.get("/", (qqq, sss) => {
 
     productModel2
         .find()
@@ -59,7 +59,7 @@ productModel2
                 categogy: item.category,
                 request: {
                     type:'GET',
-                    url:"http://localhost:5001/addressproduct/get"
+                    url:"http://localhost:5001/addressproduct/"
                 }
             }
         })
@@ -162,7 +162,7 @@ router.delete("/", (req, res) =>{
                 msg: "deleted All products",
                 request: {
                     type: 'GET',
-                    url: "http://localhost:5001/addressproduct/get"
+                    url: "http://localhost:5001/addressproduct/"
                 }
             })
         })
@@ -182,7 +182,7 @@ router.delete("/:productId", (req, res)=>{
                 msg: "deleted product",
                 request:{
                     type: 'GET',
-                    url: "http://localhost:5001/addressproduct/get"
+                    url: "http://localhost:5001/addressproduct/"
                 }
             })
         })
