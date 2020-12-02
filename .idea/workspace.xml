@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4c811f50-4825-44e3-8ded-a66c1b27011a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/route/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/route/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +51,7 @@
       <workItem from="1606224613308" duration="4474000" />
       <workItem from="1606283020562" duration="10347000" />
       <workItem from="1606830210624" duration="732000" />
-      <workItem from="1606838274699" duration="12483000" />
+      <workItem from="1606838274699" duration="13304000" />
     </task>
     <servers />
   </component>
@@ -67,7 +69,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/route/user.js</url>
-          <line>62</line>
+          <line>63</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
