@@ -59,11 +59,6 @@ router.post("/register", (req, res) => {
                 msg: err.message
             })
         })
-
-
-
-
-
 })
 
 

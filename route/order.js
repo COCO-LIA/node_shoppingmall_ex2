@@ -1,8 +1,8 @@
 const express = require("express")
-
 const router = express.Router()
 
 const orderModel2 = require('../model/order')
+const checkAuth = require('../middleware/check-auth')
 
 //order 불러오는 API
 router.get("/", (req, res) => {
@@ -34,7 +34,7 @@ router.get("/", (req, res) => {
 
 //상세 불러오는 API
 
-router.get("/:orderId2", (req, res) => {
+router.get("/:orderId2", checkAuth, (req, res) => {
 
     orderModel2
         .findById(req.params.orderId2)
@@ -57,7 +57,7 @@ router.get("/:orderId2", (req, res) => {
 
 
 //order 등록하는 API
-router.post("/", (req,res) => {
+router.post("/", checkAuth, (req,res) => {
     // res.json({
     //     message: "order의 post api"
     // })
@@ -82,14 +82,14 @@ router.post("/", (req,res) => {
 })
 
 //order 수정하는 API
-router.patch("/", (req, res) => {
+router.patch("/", checkAuth, (req, res) => {
     res.json({
         message: "order의 patch api"
     })
 })
 
 // order 삭제하는 API
-router.delete("/", (req,res) => {
+router.delete("/", checkAuth, (req,res) => {
     // res.json ({
     //     message: "order 의 delete api"
     // })

@@ -1,19 +1,19 @@
 //1
 const express = require("express")
-
 const router = express.Router()
 
 const productModel2 = require('../model/product')
+const checkAuth = require('../middleware/check-auth')
 
 //3
 
 //product 불러오는 API
-router.get("/", (qqq, sss) => {
+router.get("/", (req, res) => {
 
     productModel2
         .find()
         .then(docs => {
-            sss.json({
+            res.json({
                 msg: "product total get",
                 count: docs.length,
                 products: docs.map(doc => {
@@ -32,7 +32,7 @@ router.get("/", (qqq, sss) => {
             })
         })
         .catch(err => {
-            sss.json({
+            res.json({
                 msg:err.message
             })
         })
@@ -45,18 +45,18 @@ router.get("/", (qqq, sss) => {
 })
 
 //상세 product불러오는 API
-router.get("/:productId", (qqq, sss) => {
+router.get("/:productId", checkAuth, (req, res) => {
 
 productModel2
-    .findById(qqq.params.productId)
+    .findById(req.params.productId)
     .then(item => {
-        sss.json({
+        res.json({
             msg:"get product data" + item._id,
             product:{
                 id: item._id,
                 name: item.name,
                 price: item.price,
-                categogy: item.category,
+                category: item.category,
                 request: {
                     type:'GET',
                     url:"http://localhost:5001/addressproduct/"
@@ -65,14 +65,14 @@ productModel2
         })
     })
     .catch(err => {
-        sss.json({
+        res.json({
             msg:err.message
         })
     })
 })
 
 //procuct 등록해주는 API
-router.post("/", (req, res) =>{
+router.post("/", checkAuth, (req, res) =>{
 
     // //사용자 입력값 설정
     //
@@ -103,7 +103,7 @@ router.post("/", (req, res) =>{
                     id: item._id,
                     name: item.name,
                     price: item.price,
-                    categogy: item.category,
+                    category: item.category,
                     request: {
                         type: 'GET',
                         url: "http://localhost:5001/addressproduct/" + item._id
@@ -120,7 +120,7 @@ router.post("/", (req, res) =>{
 })
 
 //product 수정하는 API
-router.patch("/:productId", (req, res) => {
+router.patch("/:productId", checkAuth, (req, res) => {
     // res.json({
     //     message : "product의 patch 라우터"
     // })
@@ -151,7 +151,7 @@ router.patch("/:productId", (req, res) => {
 
 })
 //product 삭제하는 API
-router.delete("/", (req, res) =>{
+router.delete("/", checkAuth, (req, res) =>{
     // res.json({
     //     message: "product의 delete API"
     // })
@@ -174,7 +174,7 @@ router.delete("/", (req, res) =>{
 })
 
 //특정 product를 삭제하는 API
-router.delete("/:productId", (req, res)=>{
+router.delete("/:productId", checkAuth, (req, res)=>{
     productModel2
         .findByIdAndDelete(req.params.productId)
         .then(() => {
