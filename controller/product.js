@@ -31,7 +31,7 @@ exports.products_get_all = (req, res) => {
     // ddd.json({
     //     message : "get라우터 "
     // })
-}
+};
 
 //상세 product 불러오는 코드
 exports.products_get_product = (req, res) => {
@@ -58,29 +58,17 @@ exports.products_get_product = (req, res) => {
                 msg:err.message
             })
         })
-}
+};
 
 //product 등록해주는 코드
 exports.products_post_product = (req, res) =>{
 
-    // //사용자 입력값 설정
-    //
-    // const productInfo = {
-    //     name: req.body.productname,
-    //     price: req.body.productPrice,
-    //     category: req.body.category
-    // }
-    //
-    //
-    // res.json({
-    //     message : "product의 post 라우터",
-    //     product: productInfo
-    // })
+    const { name, price, category } = req.body;
 
     const productInfo = new productModel2({
-        name: req.body.productname,
-        price: req.body.productprice,
-        category: req.body.category
+        name,
+        price,
+        category
     })
 
     productInfo
@@ -106,7 +94,7 @@ exports.products_post_product = (req, res) =>{
             })
         })
 
-}
+};
 
 //product 수정해주는 코드
 exports.products_patch_product = (req, res) => {
@@ -137,7 +125,7 @@ exports.products_patch_product = (req, res) => {
                 msg:err.message
             })
         })
-}
+};
 
 //전체 product 삭제해주는 코드
 exports.products_delete_all = (req, res) =>{
@@ -160,7 +148,7 @@ exports.products_delete_all = (req, res) =>{
                 msg: err.message
             })
         })
-}
+};
 
 //특정 product 삭제해주는 코드
 exports.products_delete_product = (req, res)=>{
@@ -181,4 +169,4 @@ exports.products_delete_product = (req, res)=>{
                 msg: err.message
             })
         })
-}
+};

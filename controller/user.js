@@ -6,17 +6,18 @@ const userModel = require('../model/user')
 //회원가입 코드
 exports.user_register = (req, res) => {
 
+    const { username, email, password } = req.body;
     //DB 이메일 유무 체크 -> 패스워드 암호화 -> DB에 유저정보 저장
 
     userModel
-        .findOne({email: req.body.em})
+        .findOne({email})
         .then(user => {
             if(user) {
                 return res.json({
                     msg: "중복된 이메일입니다. 다른 메일을 입력해 주십시오."
                 })
             } else {
-                bcrypt.hash(req.body.pw, 10, (err, hash) => {
+                bcrypt.hash(password, 10, (err, hash) => {
 
                     if(err){
                         return res.json({
@@ -24,8 +25,8 @@ exports.user_register = (req, res) => {
                         })
                     } else {
                         const userInfo = new userModel({
-                            username: req.body.unm,
-                            email:req.body.em,
+                            username,
+                            email,
                             password:hash
 
                         })
@@ -60,9 +61,10 @@ exports.user_register = (req, res) => {
 //로그인 코드
 exports.user_login = (req, res) => {
 
+    const { email, password } = req.body;
     //이메일 유무체크 -> 패스워드 매칭-> 접속유저정보 뿌려주기(jwt 생성)
     userModel
-        .findOne({email: req.body.em })
+        .findOne({ email })
         .then(uuser => {
             if(!uuser) {
                 return  res.json ({
@@ -70,7 +72,7 @@ exports.user_login = (req, res) => {
                 })
             } else  {
                 // console.log(uuser)
-                bcrypt.compare(req.body.pw, uuser.password, (err, isMatch) => {
+                bcrypt.compare(password, uuser.password, (err, isMatch) => {
 
                     if (err || isMatch === false) {
                         return  res.json({

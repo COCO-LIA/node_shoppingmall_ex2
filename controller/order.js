@@ -54,12 +54,12 @@ exports.order_get_order = (req, res) => {
 
 //order 등록하는 코드
 exports.order_post_order = (req,res) => {
-    // res.json({
-    //     message: "order의 post api"
-    // })
+
+    const { product, quantity } = req.body;
+
     const orderInfo = new orderModel2({
-        product: req.body.productId2,
-        quantity: req.body.qty2
+        product,
+        quantity
     })
 
     orderInfo
