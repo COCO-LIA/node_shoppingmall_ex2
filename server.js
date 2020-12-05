@@ -6,25 +6,13 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+dotenv.config()
 
 const app = express()
 
-//DB connect
-const dbAddress = "mongodb+srv://admin:qwer@cluster0.huxry.mongodb.net/nodeshoppingmall2?retryWrites=true&w=majority"
-
-const dbOptions = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-}
-
-mongoose
-    .connect(dbAddress, dbOptions )
-    .then(() => console.log("DB connected")) //db에 성공했을 때 행동
-    .catch(err => console.log("++++++++++++++++++", err.message)) //db에 실패했을 때 행동
-
+//DB커넥트
+require('./middleware/database')
 
 const productRoute = require("./route/product")
 const orderRoute = require("./route/order")
@@ -38,6 +26,6 @@ app.use("/addressproduct", productRoute)
 app.use("/addressorder", orderRoute)
 app.use("/addressuser", userRoute)
 
-const port = 5001
+const port = process.env.PORT || 7001
 
 app.listen(port, console.log("Server started"))
